@@ -15,14 +15,14 @@ const CepService = {
         };
     },
 
-    setAddress: ({ logradouro, complemento, bairro, localidade, uf }) => {
+    setAddress: ({ cep, address }) => {
 
         return `
-            Logradouro: ${logradouro} 
-            Complemento: ${complemento} 
-            Bairro: ${bairro} 
-            Cidade: ${localidade} 
-            Estado: ${uf}
+            Logradouro: ${address.logradouro} 
+            Complemento: ${address.complemento} 
+            Bairro: ${address.bairro} 
+            Cidade: ${address.localidade} 
+            Estado: ${address.uf}
         `
     }
 }

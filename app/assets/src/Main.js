@@ -12,16 +12,16 @@ const Main = async () => {
 
   const _submit = document.getElementById('_submit');
 
-  _submit.onclick = (event) => {
+  _submit.onclick = async (event) => {
     event.preventDefault();
 
     const { GetAddress, NewComment } = Core;
 
-    const address = GetAddress(); 
+    const data = await GetAddress(); 
 
-    console.log(address);
+    const comment = NewComment(data)
 
-    const comment = NewComment(address)
+    client.trigger('publish', comment);
 
     let appBody = comment;
 
