@@ -1,4 +1,4 @@
-import Core from "./Core.js";
+import Core from './Core.js';
 
 const client = ZAFClient.init();
 let settings;
@@ -8,8 +8,8 @@ client.metadata().then((metadata) => {
 });
 
 const Main = async () => {
-  const App = document.getElementById("app");
-  let appBody = `<div id="main-content"></div>`;
+  const App = document.getElementById('app');
+  let appBody = `<div id="main-content">HELLO WORLD</div>`;
 
   // Write App
   App.innerHTML = appBody;
