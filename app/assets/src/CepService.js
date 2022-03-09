@@ -1,23 +1,28 @@
+const API = axios.create({
+    baseURL: 'https://viacep.com.br/ws/'
+});
+
 const CepService = {
     getAddress: async (cep) => {
 
-        const response = await fetch(`https://viacep.com.br/ws/${cep}/json/`, {
-            method: 'GET'
-        });
+        const response = await API.get(`${cep}/json/`);
 
-        return response.json();
+        const { data } = response;
+
+        return {
+            cep,
+            address: data
+        };
     },
 
-    setAddress: async (address) => {
+    setAddress: ({ logradouro, complemento, bairro, localidade, uf }) => {
 
         return `
-            <div>
-                Logradouro: ${address.logradouro} 
-                Complemento: ${address.complemento} 
-                Bairro: ${address.bairro} 
-                Cidade: ${address.localidade} 
-                Estado: ${address.uf}
-            </div>
+            Logradouro: ${logradouro} 
+            Complemento: ${complemento} 
+            Bairro: ${bairro} 
+            Cidade: ${localidade} 
+            Estado: ${uf}
         `
     }
 }

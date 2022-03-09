@@ -9,10 +9,28 @@ client.metadata().then((metadata) => {
 
 const Main = async () => {
   const App = document.getElementById('app');
-  let appBody = `<div id="main-content">HELLO WORLD</div>`;
 
-  // Write App
-  App.innerHTML = appBody;
+  const _submit = document.getElementById('_submit');
+
+  _submit.onclick = (event) => {
+    event.preventDefault();
+
+    const { GetAddress, NewComment } = Core;
+
+    const address = GetAddress(); 
+
+    console.log(address);
+
+    const comment = NewComment(address)
+
+    let appBody = comment;
+
+    // Write App
+    App.innerHTML = appBody;
+  }
+
+
+
 };
 
 export default Main;
