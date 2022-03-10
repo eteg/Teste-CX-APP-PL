@@ -14,8 +14,6 @@ const GetAddress = async () => {
   if(address.erro){
     return false;
   }
-  
-  console.log(address, cep);
 
   return { address, cep };
 }
