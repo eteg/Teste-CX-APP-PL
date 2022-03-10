@@ -4,3 +4,19 @@
 html {
   overflow-y: auto;
 }
+
+input{
+  outline: none;
+}
+
+.invalid{
+  border: 1px solid #ff1111;
+}
+
+.valid{
+  border: 1px solid #00ff2a;
+}
+
+.default{
+  border: 1px solid #736b5e;
+}

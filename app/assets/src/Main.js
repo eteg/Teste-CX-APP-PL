@@ -8,28 +8,39 @@ client.metadata().then((metadata) => {
 });
 
 const Main = async () => {
-  const App = document.getElementById('app');
+  const { GetAddress, NewComment } = Core;
 
   const _submit = document.getElementById('_submit');
+  const _mgsErro = document.getElementById('_mgsErro');
 
   _submit.onclick = async (event) => {
     event.preventDefault();
 
-    const { GetAddress, NewComment } = Core;
+    const _form = document.getElementById('_form');
 
-    const data = await GetAddress(); 
+    const cepValue = document.getElementById('_cepInput');
 
-    const comment = NewComment(data)
+    const data = await GetAddress();
 
-    client.trigger('publish', comment);
+    if (!data === false) {
+      const comment = NewComment(data)
 
-    let appBody = comment;
+      client.trigger('publish', comment);
 
-    // Write App
-    App.innerHTML = appBody;
+      _mgsErro.innerText = '';
+
+      cepValue.setAttribute('class', 'default');
+
+      _form.reset();
+
+    } else {
+      
+      cepValue.setAttribute('class', 'invalid');
+
+      _mgsErro.innerText = 'Por favor, informe um CEP válido.';
+    };
+
   }
-
-
 
 };
 
