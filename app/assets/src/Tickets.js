@@ -18,8 +18,6 @@ const setTickets = (tickets) => {
     const container = document.getElementById('_tickets');
     const ticketTemplate = document.querySelector('.ticket');
 
-    container.innerHTML = '';
-
     tickets.forEach(({title, link}, index) => {
         const ticket = ticketTemplate.cloneNode(true);
         
