@@ -12,7 +12,6 @@ const Main = async (requester_id) => {
   const { GetAddress, NewComment } = Core;
   const { getTickets, setTickets} = Tickets;
 
-  // const ticketsRequest = await client.request(`/api/v2/users/424140186972/tickets/requested`);
   const ticketsRequest = await client.request(`/api/v2/search.json?query=type:ticket requester_id:${requester_id}`);
   const tickets = await getTickets(ticketsRequest);
 
