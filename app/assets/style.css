@@ -20,3 +20,19 @@ input{
 .default{
   border: 1px solid #736b5e;
 }
+
+#_tickets{
+  width: 100%;
+  height: auto;
+}
+
+.ticket{
+  width: 90%;
+  margin: .5em 0;
+  padding: .5em;
+  background: #04363c;
+}
+
+.ticket a{
+  color: #FFFF;
+}

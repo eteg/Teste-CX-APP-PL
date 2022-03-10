@@ -1,6 +1,5 @@
 import Main from './Main.js';
 
-// Start client and resize app
 let client = ZAFClient.init();
 
 client.on('app.registered', (e) => {
@@ -29,5 +28,4 @@ client.on('publish', comment => client.request({
   }
 }));
 
-// Create screen context
 Main(ticket_requester_id);

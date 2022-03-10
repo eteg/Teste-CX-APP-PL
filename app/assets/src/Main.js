@@ -1,4 +1,5 @@
 import Core from './Core.js';
+import Tickets from './Tickets.js';
 
 const client = ZAFClient.init();
 let settings;
@@ -7,8 +8,15 @@ client.metadata().then((metadata) => {
   settings = metadata.settings;
 });
 
-const Main = async () => {
+const Main = async (requester_id) => {
   const { GetAddress, NewComment } = Core;
+  const { getTickets, setTickets} = Tickets;
+
+  // const ticketsRequest = await client.request(`/api/v2/users/424140186972/tickets/requested`);
+  const ticketsRequest = await client.request(`/api/v2/search.json?query=type:ticket requester_id:${requester_id}`);
+  const tickets = await getTickets(ticketsRequest);
+
+  setTickets(tickets);
 
   const _submit = document.getElementById('_submit');
   const _mgsErro = document.getElementById('_mgsErro');
@@ -34,7 +42,7 @@ const Main = async () => {
       _form.reset();
 
     } else {
-      
+
       cepValue.setAttribute('class', 'invalid');
 
       _mgsErro.innerText = 'Por favor, informe um CEP válido.';
