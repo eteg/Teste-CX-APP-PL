@@ -1,4 +1,5 @@
 import Core from "./Core.js";
+import ListTickets from './ListTickets.js';
 
 const client = ZAFClient.init();
 let settings;
@@ -8,8 +9,12 @@ client.metadata().then((metadata) => {
 });
 
 const Main = async (requester_ticket) => {
-  const tickets = await client.request(`/api/v2/search.json?query=type:ticket requester_id:${requester_ticket}`);
-  console.log(tickets)
+  const { getListTickets } = ListTickets;
+
+  const ticketsData = await client.request(`/api/v2/search.json?query=type:ticket requester_id:${requester_ticket}`);
+  console.log(ticketsData)
+
+  await getListTickets(ticketsData);
 
   const { GetAddressByZipCode, CommentNewTicket } = Core;
 

@@ -21,3 +21,17 @@ input{
   border-radius: 5px;
   border: 1px solid #b5abab;
 }
+
+.linkTicket{
+  padding: 30px;
+  background-color: #b5abab;
+}
+
+.linkTicket a{
+  color: #000;
+}
+
+h5{
+  font-size: 20px;
+  margin-bottom: 10px;
+}
