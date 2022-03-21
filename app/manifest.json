@@ -1,15 +1,18 @@
 {
   "name": "Test APP",
   "author": {
-    "name": "Rodolfo Oliveira",
-    "email": "rodolfo.oliveira@eteg.com.br",
-    "url": "https://eteg.com.br"
+    "name": "Tiago Alves ",
+    "email": "tiagoalvesdesouzaoficial@gmail.com",
+    "url": ""
   },
   "defaultLocale": "pt",
   "private": true,
   "location": {
     "support": {
-      "user_sidebar": "assets/iframe.html"
+      "ticket_sidebar": {
+        "url": "assets/iframe.html",
+        "flexible": true
+      }
     }
   },
   "parameters": [
