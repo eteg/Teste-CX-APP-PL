@@ -4,3 +4,20 @@
 html {
   overflow-y: auto;
 }
+
+button{
+  color: #ffffff;
+  background: #3B82F6;
+  border: 1px solid #3B82F6;
+  padding: 0.3rem 1.25rem;
+  font-size: 1rem;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+  border-radius: 6px;
+}
+
+input{
+  outline: none;
+  padding: 4px;
+  border-radius: 5px;
+  border: 1px solid #b5abab;
+}
