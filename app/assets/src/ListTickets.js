@@ -17,8 +17,27 @@ const getListTickets = async ({ data }) => {
 
 }
 
+const setListTickets = (listTickets) => {
+    console.log(listTickets)
+    const parent_element = document.getElementById('listTickets');
+    const container = document.querySelector('.ticket');
+
+    listTickets.forEach(({ title }, i) => {
+
+        container.classList.remove('hidden')
+        container.classList.add('flex')
+
+        const [OneticketLink] = container.children;
+
+        OneticketLink.innerText = `${i + 1}. ${title}`;
+
+        parent_element.append(container);
+    })
+}
+
 const ListTickets = {
     getListTickets,
+    setListTickets
 }
 
 export default ListTickets;

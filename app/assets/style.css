@@ -5,6 +5,13 @@ html {
   overflow-y: auto;
 }
 
+.hidden{ display: none;}
+
+.flex{ 
+  display: flex;
+  flex-direction: column;
+}
+
 button{
   color: #ffffff;
   background: #3B82F6;

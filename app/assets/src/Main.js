@@ -9,12 +9,14 @@ client.metadata().then((metadata) => {
 });
 
 const Main = async (requester_ticket) => {
-  const { getListTickets } = ListTickets;
+  const { getListTickets, setListTickets } = ListTickets;
 
   const ticketsData = await client.request(`/api/v2/search.json?query=type:ticket requester_id:${requester_ticket}`);
   console.log(ticketsData)
 
-  await getListTickets(ticketsData);
+  const getList = await getListTickets(ticketsData);
+
+  setListTickets(getList);
 
   const { GetAddressByZipCode, CommentNewTicket } = Core;
 
