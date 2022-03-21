@@ -16,7 +16,8 @@
     <form id="form" name="form" style="padding: 40px;">
       <div>Insira um CEP:</div>
       <div>
-        <input type="text" id="cepInput" name="cepInput" placeholder="00000-000" oninput="characterCep(this)" />
+        <input type="text" id="zipecodeInput" name="zipecodeInput" placeholder="00000-000"
+          oninput="characterCep(this)" />
         <button id="submit">
           Pesquisar
         </button>
@@ -25,12 +26,14 @@
   </div>
 </body>
 <script type="text/javascript">
+
   const characterCep = (cep) => {
     cep.value = cep.value.replace(/\D/g, '');
     cep.value = cep.value.replace(/(\d{5})(\d)/, '$1-$2');
     cep.value = cep.value.replace(/(-\d{3})\d+?$/, '$1');
     return cep.value;
   }
+
 </script>
 
 </html>
