@@ -8,17 +8,13 @@ client.metadata().then((metadata) => {
   settings = metadata.settings;
 });
 
-const Main = async (requester_ticket) => {
+const Main = async (requester_ticketId) => {
   const { getListTickets, setListTickets } = ListTickets;
-
-  const ticketsData = await client.request(`/api/v2/search.json?query=type:ticket requester_id:${requester_ticket}`);
-  console.log(ticketsData)
-
-  const getList = await getListTickets(ticketsData);
-
-  setListTickets(getList);
-
   const { GetAddressByZipCode, CommentNewTicket } = Core;
+
+  const ticketsData = await client.request(`/api/v2/search.json?query=type:ticket requester_id:${requester_ticketId}`);
+  const getList = await getListTickets(ticketsData);
+  setListTickets(getList);
 
   let submit = document.getElementById('submit');
 

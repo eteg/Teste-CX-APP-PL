@@ -12,6 +12,8 @@ html {
   flex-direction: column;
 }
 
+.p-40{ padding: 40px; }
+
 button{
   color: #ffffff;
   background: #3B82F6;
@@ -41,4 +43,8 @@ input{
 h5{
   font-size: 20px;
   margin-bottom: 10px;
+}
+
+#listTickets{
+  width: 100%;height: auto;
 }

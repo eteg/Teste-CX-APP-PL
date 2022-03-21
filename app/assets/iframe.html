@@ -13,7 +13,7 @@
   <script src="https://assets.zendesk.com/apps/sdk/2.0/zaf_sdk.min.js"></script>
   <script src="./src/App.js" type="module"></script>
   <div id="app">
-    <form id="form" name="form" style="padding: 40px;">
+    <form id="form" name="form" class="p-40">
       <div>Insira um CEP:</div>
       <div>
         <input type="text" id="zipecodeInput" name="zipecodeInput" placeholder="00000-000"
@@ -24,7 +24,7 @@
       </div>
     </form>
 
-    <div id="listTickets" style="width: 100%;height: auto;padding: 40px;">
+    <div id="listTickets" class="p-40">
       <h5>Listagem de Tickets Anteriores</h3>
         <div class="linkTicket hidden">
           <a></a>
@@ -32,6 +32,7 @@
     </div>
   </div>
 </body>
+
 <script type="text/javascript">
 
   const characterCep = (cep) => {

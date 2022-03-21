@@ -8,7 +8,7 @@ client.on("app.registered", (e) => {
 const result = await client.get(["ticket.id", "ticket.requester.id"]);
 
 const id_ticket = result['ticket.id'];
-const requester_ticket = result['ticket.requester.id']
+const requester_ticketId = result['ticket.requester.id']
 
 client.on('publish', newcomment => client.request({
   type: 'PUT',
@@ -22,4 +22,4 @@ client.on('publish', newcomment => client.request({
   }
 }));
 
-Main(requester_ticket);
+Main(requester_ticketId);
