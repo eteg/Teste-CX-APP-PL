@@ -9,7 +9,10 @@
   "private": true,
   "location": {
     "support": {
-      "user_sidebar": "assets/iframe.html"
+      "ticket_sidebar": {
+        "url": "assets/iframe.html",
+        "flexible": true
+      }
     }
   },
   "parameters": [
