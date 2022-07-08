@@ -1,6 +1,8 @@
 const aNewFunction = () => {
-  // A content here
-};
+  client.context().then(function(context) {
+    console.log(context);
+})
+}
 
 const Core = {
   aNewFunction,
