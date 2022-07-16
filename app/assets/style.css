@@ -4,3 +4,10 @@
 html {
   overflow-y: auto;
 }
+
+
+#zipcode-form {
+  margin-top: 0.5rem;
+  display: flex;
+  gap: 1rem;
+}
