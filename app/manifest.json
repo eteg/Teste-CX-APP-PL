@@ -1,15 +1,15 @@
 {
-  "name": "Test APP",
+  "name": "Desafio ETEG",
   "author": {
-    "name": "Rodolfo Oliveira",
-    "email": "rodolfo.oliveira@eteg.com.br",
-    "url": "https://eteg.com.br"
+    "name": "Vinícius Souza",
+    "email": "vinicius.fernando.souza@gmail.com",
+    "url": "https://www.linkedin.com/in/viniciusfersouza/"
   },
   "defaultLocale": "pt",
   "private": true,
   "location": {
     "support": {
-      "user_sidebar": "assets/iframe.html"
+      "ticket_sidebar": "assets/iframe.html"
     }
   },
   "parameters": [
