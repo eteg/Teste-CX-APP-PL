@@ -11,14 +11,18 @@
 <body>
   <script src="https://assets.zendesk.com/apps/sdk/2.0/zaf_sdk.min.js"></script>
   <script src="./src/App.js" type="module"></script>
+  <script src="./src/validators/zipCode.js"></script>
   <div id="app">
     <div id="main-content">
       <div id="zipcode-area">
         <small class="c-txt__hint">Buscar endereço e adicionar observações ao ticket</small>
         <div id="zipcode-form" class="c-txt">
-          <input class="c-txt__input" id="zipcode-text" placeholder="000000-000" type="text" />
+          <input onkeyup="validZipCode(); addZipCodeMask();" class="c-txt__input" id="zipcode-text"
+            placeholder="000000-000" type="text" />
           <button id="zipcode-btn" class="c-btn">Adicionar</button>
         </div>
+        <small id="message-zip-error" class="c-txt__message c-txt__message--error hidden-message-zip-error">CEP
+          inválido</small>
       </div>
     </div>
   </div>

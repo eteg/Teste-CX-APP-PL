@@ -11,3 +11,11 @@ html {
   display: flex;
   gap: 1rem;
 }
+
+.hidden-message-zip-error {
+  visibility: hidden;
+}
+
+.show-message-zip-error {
+  visibility: visible;
+}
