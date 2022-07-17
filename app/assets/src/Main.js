@@ -7,6 +7,15 @@ client.metadata().then((metadata) => {
   settings = metadata.settings;
 });
 
+client.on("app.registered", async () => {
+  const { requester } = await Core.getTicket();
+  const data = await Core.getRequesterTickets(requester.id);
+
+  console.log(data);
+
+  Core.generateList(data.results);
+});
+
 const Main = async () => {
   client.on("app.registered", () => {
     document

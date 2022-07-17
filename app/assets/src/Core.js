@@ -1,14 +1,16 @@
-import { viaCEP } from '../src/services/viaCEP.js';
-import {
-  validZipCode,
-  addZipCodeMask
-} from './validators/zipCode.js';
+import { viaCEP } from "./services/viaCEP.js";
+import { getRequesterTickets, getTicket } from "./services/zendesk.js";
+import { generateList } from "./services/listTickets.js";
 
+import { validZipCode, addZipCodeMask } from "./validators/zipCode.js";
 
 const Core = {
   validZipCode,
   addZipCodeMask,
-  viaCEP
+  viaCEP,
+  getRequesterTickets,
+  getTicket,
+  generateList,
 };
 
 export default Core;
