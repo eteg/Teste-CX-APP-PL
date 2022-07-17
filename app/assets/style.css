@@ -1,10 +1,10 @@
 * {
   box-sizing: border-box;
+  caret-color: transparent;
 }
 html {
   overflow-y: auto;
 }
-
 
 #zipcode-form {
   margin-top: 0.5rem;
@@ -18,4 +18,18 @@ html {
 
 .show-message-zip-error {
   visibility: visible;
+}
+
+#hr-ticket-list {
+  margin-top: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+.info {
+  color: #5293c7;
+  text-align: center;
+}
+
+.c-table td:first-child {
+  font-weight: bold;
 }
