@@ -1,4 +1,5 @@
-import { errorHandlerViaCEP } from "../validators/viaCEP.js";
+import { handleMessageViaCEP } from "../validators/viaCEP.js";
+import { STATE } from "../constants/state.js";
 
 const generateComment = (viaCEPData) => {
   return `
@@ -42,15 +43,19 @@ export const viaCEP = () => {
               },
             }),
           })
-          .then((res) => {})
-          .catch((e) => {
-            errorHandlerViaCEP(
-              "Houve algum erro ao adicionar o comentário. Tente novamente mais tarde."
-            );
-          });
+          .then((res) =>
+            handleMessageViaCEP(
+              "Comentário adicionado com sucesso",
+              STATE.SUCCESS
+            )
+          )
+          .catch((e) =>
+            handleMessageViaCEP(
+              "Houve algum erro ao adicionar o comentário. Tente novamente mais tarde.",
+              STATE.ERROR
+            )
+          );
       });
     })
-    .catch((e) => {
-      errorHandlerViaCEP("CEP não encontrado");
-    });
+    .catch((e) => handleMessageViaCEP("CEP não encontrado", STATE.ERROR));
 };
