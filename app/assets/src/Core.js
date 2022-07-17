@@ -1,9 +1,12 @@
-const aNewFunction = () => {
-  // A content here
-};
+import {
+  validZipCode,
+  addZipCodeMask
+} from "./validators/zipCode.js";
+
 
 const Core = {
-  aNewFunction,
+  validZipCode,
+  addZipCodeMask,
 };
 
 export default Core;

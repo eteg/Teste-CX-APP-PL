@@ -8,7 +8,10 @@ client.metadata().then((metadata) => {
 });
 
 const Main = async () => {
-  // Write App
+  client.on('app.registered', () => {
+    document.getElementById("zipcode-text").addEventListener("keyup", Core.addZipCodeMask);
+    document.getElementById("zipcode-text").addEventListener("keyup", Core.validZipCode);
+  });
 };
 
 export default Main;
