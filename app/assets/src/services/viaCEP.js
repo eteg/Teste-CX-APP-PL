@@ -42,9 +42,7 @@ export const viaCEP = () => {
               },
             }),
           })
-          .then((res) => {
-            console.log(res);
-          })
+          .then((res) => {})
           .catch((e) => {
             errorHandlerViaCEP(
               "Houve algum erro ao adicionar o comentário. Tente novamente mais tarde."
