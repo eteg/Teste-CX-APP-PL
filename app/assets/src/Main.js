@@ -8,9 +8,18 @@ client.metadata().then((metadata) => {
 });
 
 const Main = async () => {
-  client.on('app.registered', () => {
-    document.getElementById("zipcode-text").addEventListener("keyup", Core.addZipCodeMask);
-    document.getElementById("zipcode-text").addEventListener("keyup", Core.validZipCode);
+  client.on("app.registered", () => {
+    document
+      .getElementById("zipcode-text")
+      .addEventListener("keyup", Core.addZipCodeMask);
+
+    document
+      .getElementById("zipcode-text")
+      .addEventListener("keyup", Core.validZipCode);
+
+    document
+      .getElementById("zipcode-btn")
+      .addEventListener("click", Core.viaCEP);
   });
 };
 
