@@ -1,13 +1,17 @@
+import translations from "../translations/pt-br.js";
+
 export const generateList = (listTicket) => {
   const listTicketElement = document.getElementById("ticket-list");
 
+  const { status } = translations.ticket;
+
   if (!listTicket || !listTicket.length) {
     listTicketElement.innerHTML =
-      '<p class="info">✓ Nenhum ticket anterior encontrado para esse usuário.</p>';
+      '<p class="info">✓ Nenhum ticket anterior encontrado para essa pessoa.</p>';
     return;
   }
 
-  let table = `<strong>Últimos tickets encontrados:</strong>
+  let table = `<strong>Tickets recentes da pessoa requerente:</strong>
     <table class="c-table">
     <thead>
       <tr class="c-table__row c-table__row--header">
@@ -29,7 +33,9 @@ export const generateList = (listTicket) => {
         <tr class="c-table__row">
           <td class="c-table__row__cell">${tktLink}</td>
           <td class="c-table__row__cell">${tkt.subject}</td>
-          <td class="c-table__row__cell">${tkt.status}</td>
+          <td class="c-table__row__cell">${
+            status[tkt.status] || tkt.status
+          }</td>
           <td class="c-table__row__cell"><small>${new Date(
             tkt.created_at
           ).toLocaleString()}</small></td>
