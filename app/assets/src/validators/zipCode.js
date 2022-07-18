@@ -6,6 +6,22 @@ import {
 
 import { CEP_PATTERN, DIGIT_PATTERN } from "../constants/regex.js";
 
+const showMessage = () => {
+  const messageZipError = document.getElementById("message-zip-error");
+  messageZipError.className = messageZipError.className.replace(
+    "hidden",
+    "show"
+  );
+};
+
+const hideMessage = () => {
+  const messageZipError = document.getElementById("message-zip-error");
+  messageZipError.className = messageZipError.className.replace(
+    "show",
+    "hidden"
+  );
+};
+
 export const validZipCode = () => {
   const re_rep = new RegExp(CEP_PATTERN);
   const messageZipError = document.getElementById("message-zip-error");
@@ -16,27 +32,17 @@ export const validZipCode = () => {
   );
 
   if (zipCodeText.value && zipCodeText.value.length < 8) {
+    hideMessage();
     zipCodeText.className = CLASS_INPUT_PRIMARY;
-    messageZipError.innerText = "";
-
+    messageZipError.innerText = "Digite um CEP válido";
     return;
-  } else {
-    zipCodeText.className = CLASS_INPUT_ERROR;
-    messageZipError.innerText = "CEP inválido";
   }
 
   if (zipCodeText.value && !re_rep.test(zipCodeText.value)) {
     zipCodeText.className = CLASS_INPUT_ERROR;
-    messageZipError.className = messageZipError.className.replace(
-      "hidden",
-      "show"
-    );
+    showMessage();
   } else {
-    document.getElementById("zipcode-text").className = CLASS_INPUT_SUCCESS;
-    messageZipError.className = messageZipError.className.replace(
-      "show",
-      "hidden"
-    );
+    zipCodeText.className = CLASS_INPUT_SUCCESS;
   }
 };
 

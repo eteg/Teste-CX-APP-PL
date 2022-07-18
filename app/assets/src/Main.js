@@ -7,15 +7,6 @@ client.metadata().then((metadata) => {
   settings = metadata.settings;
 });
 
-client.on("app.registered", async () => {
-  const { requester } = await Core.getTicket();
-  const data = await Core.getRequesterTickets(requester.id);
-
-  console.log(data);
-
-  Core.generateList(data.results);
-});
-
 const Main = async () => {
   client.on("app.registered", () => {
     document
@@ -29,6 +20,13 @@ const Main = async () => {
     document
       .getElementById("zipcode-btn")
       .addEventListener("click", Core.viaCEP);
+  });
+
+  client.on("app.registered", async () => {
+    const { requester } = await Core.getTicket();
+    const data = await Core.getRequesterTickets(requester.id);
+
+    Core.generateList(data.results);
   });
 };
 

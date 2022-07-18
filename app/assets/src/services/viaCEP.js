@@ -18,6 +18,12 @@ export const viaCEP = () => {
   const zipCode = document
     .getElementById("zipcode-text")
     .value.replace("-", "");
+
+  if (!zipCode || zipCode.length < 8) {
+    handleMessageViaCEP("CEP inválido", STATE.ERROR);
+    return;
+  }
+
   const url = `https://viacep.com.br/ws/${zipCode}/json/`;
 
   fetch(url)
@@ -45,13 +51,13 @@ export const viaCEP = () => {
           })
           .then((res) =>
             handleMessageViaCEP(
-              "Comentário adicionado com sucesso",
+              "Comentário adicionado com sucesso!",
               STATE.SUCCESS
             )
           )
           .catch((e) =>
             handleMessageViaCEP(
-              "Houve algum erro ao adicionar o comentário. Tente novamente mais tarde.",
+              "Houve algum erro ao adicionar o comentário. Tente novamente mais tarde",
               STATE.ERROR
             )
           );
